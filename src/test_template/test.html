@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            padding-top: 56px;
+            margin: 0;
+        }
+
+        .content-wrapper {
+            display: flex;
+        }
+
+        .content-left {
+            width: 15%;
+            background-color: #3403e6;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            position: relative;
+            transition: width 0.3s ease;
+            overflow: hidden;
+        }
+
+        .collapsed {
+            width: 50px;
+        }
+
+        .content-left.collapsed {
+            background-color: #eceff1;
+        }
+
+        .logo-container {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            width: 100%;
+            padding: 0 10px;
+        }
+
+        .logo {
+            margin-left: 10px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .logo img {
+            width: 180px;
+            height: 90px;
+            object-fit: cover;
+        }
+
+        .fa-bars {
+            display: block;
+            color: #0b0c0c;
+            font-size: 50px;
+            transition: font-size 0.3s ease;
+        }
+
+        .collapsed .fa-bars {
+            font-size: 40px;
+        }
+
+        .gear-icon-container {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            color: #d7e2e2;
+            font-size: 24px;
+            cursor: pointer;
+            transition: font-size 0.3s ease;
+        }
+
+        .content-left.collapsed .gear-icon-container {
+            font-size: 20px;
+        }
+
+        .menu {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .menu-item a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .menu-item:hover {
+            background-color: #474343;
+        }
+
+        .menu-item img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        .menu-item {
+            padding: 10px;
+            border-bottom: 1px solid #fff;
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+
+        .content-right {
+            flex: 1;
+            background-color: #eceff1;
+            padding: 20px;
+        }
+
+        /* Thêm kiểu cho bảng hiển thị thông tin đăng nhập và ngôn ngữ */
+        .info-table {
+            display: none;
+            position: absolute;
+            top: 730px;
+            right: 60px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-table p {
+            margin: 0;
+        }
+
+        .kho-hang-info {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .search-input {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="content-wrapper">
+        <div class="content-left">
+            <div class="logo-container">
+                <i class="fa-solid fa-bars"></i>
+                <div class="logo">
+                    <img src="/src/img/logo.jpg" alt="Logo" height="70" width="180">
+                </div>
+            </div>
+  
+            <div class="gear-icon-container">
+                <i class=" fas fa-thin fa-gear fa-2xl"></i>
+            </div>
+            <div class="info-table" id="infoTable">
+                <p><i class="fas fa-thin fa-user fa-sm"></i> Thông tin đăng nhập</p>
+                <p><i class="fas fa-light fa-earth-americas fa-xs"></i> Ngôn ngữ</p>
+                <hr> 
+                <p><a href="#">Đăng Nhập</a></p>
+                <p><a href="#">Đăng Xuất</a></p>
+            </div>
+            <div class="menu">
+                <div class="menu-item" onclick="showKhoHang()">
+                    <img src="/src/img/iconKhoHang.png" alt="Icon" width="60" height="60">
+                    <a href="#">Kho Hàng</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-right">
+            <!-- Nội dung bên phải của bạn sẽ được đặt ở đây -->
+        </div>
+    </div>
+
+    <script>
+        function showKhoHang() {
+            var contentRight = document.querySelector('.content-right');
+            contentRight.innerHTML = `
+                <div class="kho-hang-info">Kho Hàng</div>
+                <div class="search-input">
+                    <input type="text" placeholder="Mã sản phẩm">
+                </div>
+            `;
+        }
+    </script>
+</body>
+
+</html>

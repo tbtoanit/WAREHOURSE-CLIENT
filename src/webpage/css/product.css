@@ -1,0 +1,74 @@
+/* Product.css */
+
+/* Chỉnh kích thước và căn giữa header */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* Khoảng cách dưới header */
+}
+
+.header {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.new-button {
+    background-color: #007bff; /* Màu nút tạo mới */
+    color: #fff; /* Màu chữ trắng */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.new-button:hover {
+    background-color: #0056b3; /* Màu nền nút tạo mới khi di chuột */
+}
+
+.divider {
+    border-top: 1px solid #ccc; /* Đường kẻ ngang */
+    margin-bottom: 20px; /* Khoảng cách dưới đường kẻ ngang */
+}
+
+/* Tùy chỉnh kiểu dáng cho form */
+.form-row {
+    margin-bottom: 20px; /* Khoảng cách giữa các dòng form */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Khoảng cách giữa các input */
+}
+
+/* Chỉnh kiểu dáng cho table */
+.column {
+    float: left;
+    width: 20%; /* Phần trăm chiều rộng của mỗi cột */
+    padding: 10px;
+    border: 1px solid #ccc; /* Đường viền của bảng */
+    box-sizing: border-box;
+}
+
+.column th {
+    background-color: #f2f2f2; /* Màu nền của tiêu đề cột */
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Đường viền dưới của tiêu đề cột */
+}
+
+.column td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Đường viền dưới của dữ liệu */
+}
+
+/* Xóa các cột sau cột thứ 5 */
+.column:nth-child(n+6) {
+    display: none;
+}
+
+/* Xóa các dòng sau dòng thứ 10 */
+.column td:nth-child(n+11) {
+    display: none;
+}
